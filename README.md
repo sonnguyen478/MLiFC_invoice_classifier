@@ -1,2 +1,4 @@
 # MLiFC_invoice_classifier
-some focus in code for our study group_x in Bletchley Bootcamp
+Some focus in code for our study group_x in Bletchley Bootcamp...
+
+Contains the baseline notebook by Jannes Klaas @ Bletchley Bootcamp / Turing Society Rotterdam.
