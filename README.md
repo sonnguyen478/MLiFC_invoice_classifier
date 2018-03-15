@@ -7,7 +7,7 @@ https://drive.google.com/file/d/1wjtiXpxRkuN5V57GiK_RSPxy84cFbERO/view?usp=shari
 ## Aim of the project and approach
 Aim: to provide a proof of concept (working prototype) that is capable of extracting five specific strings from invoices.
 
-Approach: Working from the baseline provided by Jannes, we improve some of the details. Also we attempt to enrich the generated example invoices. The heart of the project will be a stacker algo that can take up to four different (intermediate) results from one to four different exctractor models.
+Approach: Working from the baseline provided by Jannes, we improve some of the details. Also we attempt to enrich the generated example invoices. The heart of the project will be a stacker algo that can take up to four different (intermediate) results from one to four different extractor models.
 
 ## Random details
 * model "regex_iban" is a traditional algorithm based on regular expressions. 
