@@ -208,7 +208,13 @@ def create_invoice(content):
 
     
     # added by Rik:
-    myid = str(uuid.uuid4())
-    truth = [myid, sender['NAME'], sender['KVKNR'], sender['IBAN'], reference, total ]
+    myid = uuid.uuid4()
+    truth = [str(myid), 
+             str(sender['NAME']),
+             str(sender['KVKNR']), 
+             str(sender['IBAN']), 
+             str(reference), 
+             str(total) 
+            ]
     
     return content, target, truth
