@@ -1,0 +1,25 @@
+{'/Producer': 'FPDF 1.7', '/CreationDate': 'D:20150128063530'}
+
+NOTA
+faktuurdatum:28-Jan-2015
+H de Rochebrune
+faktuurnummer:2015006019
+Vaarsdrift 31982 KB
+Juinen
+Datum
+Omschrijving
+bedrag
+28-Jan
+Leveren betonmortel
+329,60
+Beton besteld via website en betaling reeds voldaan.
+Totaal bedrag exclusief BTW
+329,60
+
+BTW     21%
+69,22
+
+Totaal te betalen
+398,81
+Reclames binnen 8 dagen na faktuurdatumRabobank
+rek nr. <IBAN> KvK Leeuwarden <KVKNR> BTW NL8148356513B01

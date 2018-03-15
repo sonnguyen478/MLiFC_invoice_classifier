@@ -1,0 +1,53 @@
+{'/Producer': 'FPDF 1.6', '/CreationDate': 'D:20171011160501'}
+Afleveradres
+Factuuradres
+Rik de Rochebrune
+Vaarsdrift 3 of 1
+1982 KB Juinen
+Nederland
+
+06-20180315
+Rik de Rochebrune
+Vaarsdrift 3 of 1
+1982 KB Juinen
+Nederland
+(Web)ordernummer = 20691
+Factuurnummer = 20394
+Factuurdatum = 11-10-2017
+Leverdatum = 2017-10-11
+Rabobank  rek. nr. 350090556IBAN <IBAN> o.v.v. factnr 20394
+BIC RABONL2U
+k.v.k.  <KVKNR>
+BTW nr. 850577822
+Betaling binnen 14 dagen na aflevering van het glas
+Alle vragen en/of opmerkingen
+m.b.t. de factuur of de levering
+uitsluitend per email:factuur@<SENDER_NAME>.nl
+Vermeld altijd uw factuurnummer bij correspondentie!
+<SENDER_NAME>
+Amsterdamsestraatweg 656 c
+3555HX Utrecht
+fax +31-877841949
+
+FACTUUR
+Stks
+Beschrijving
+Prijs
+Sp.Referentie
+Afmeting
+Totaal
+(K)orting /(T)oeslag
+Totaal
+1
+Gelaagd, (helder), 44.240.00per m2 merk A
+706mm x 2522mm1.78m2 • 71.221
+Gelaagd, (helder), 44.240.00per m2 merk B
+476mm x 2522mm1.2 m2 • 48.021
+Gelaagd, (helder), 44.240.00per m2 merk C
+605mm x 2522mm1.53m2 • 61.03
+
+Sub-totaal     • 180,27
+Klein orderkosten     • 25.00
+Totaal ex. BTW     • 205,27
+BTW (21%)   • 43,11
+Totaal incl. BTW     • 248,38

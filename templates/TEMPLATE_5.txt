@@ -1,0 +1,48 @@
+{'/Creator': 'ReportBuilder', '/CreationDate': 'D:20160609221815', '/Title': '<SENDER_NAME>', '/Author': 'Vanessa Reports', '/Producer': 'ReportBuilder', '/Keywords': '', '/Subject': ''}
+Oostplein 97
+3011 KW
+Rotterdam
+(+31) (0)10 7982088
+(+31) (0)10 2125351
+klantenservice@routercenter.nl
+Tel:
+Fax:
+Factuur
+Factuurnummer:
+Factuurdatum:
+Ordernummer:
+908877700
+9 juni 2016
+17209969
+Artikel
+Aantal
+Prijs per stuk
+Prijs incl. BTW
+BTW
+Klantnummer:6102888
+NederlandDemo
+H de Rochebrune
+Vaarsdrift 1 -33274 BA  Juinen
+<SENDER_NAME> B.V.
+Mail:
+Netgear GS108 8-Poorts Gigabit Netwerk Switch
+1
+34,95
+34,95••
+21%
++Totaal•
+34,95
+34,95
+'iDEAL' op 9 juni 2016•
++Subtotaal•
+34,95
+Exclusief BTW
+28,88•
+BTW21%
+6,07•
++Totaal•
+34,95
+KvK Rotterdam <KVKNR>
+BTW NL810433941B01    IBAN <IBAN>
+
+Kijk voor alle informatie over ruilen, retouren, defecten en garantie op http://www.routercenter.nl/klantenservice/

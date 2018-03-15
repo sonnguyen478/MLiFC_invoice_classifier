@@ -1,0 +1,90 @@
+{'/Producer': 'TCPDF 5.9.179 (http://www.tcpdf.org)', '/CreationDate': "D:20160623090539+02'00'", '/ModDate': "D:20160623090539+02'00'", '/Trapped': '/False'}
+
+<SENDER_NAME>
+2016-06-23
+#IN005229
+
+<SENDER_NAME>
+Loberingemaat 6
+7942 JD Meppel
+Nederland
+Afleveradres
+r de Rochebrune
+Vaarsdrift 3 of 1
+3274 BA Juinen
+Nederland
+06-20180315
+Factuuradres
+r de Rochebrune
+Vaarsdrift 3 of 1
+3274 BA Juinen
+Nederland
+06-20180315
+
+Factuurnummer
+Factuurdatum
+Bestellingreferentie
+Besteldatum
+#IN005229
+2016-06-23
+IFFOMVXLZ
+2016-06-23
+
+Referentie
+Product
+Btw-
+tarief
+Stukprijs
+(excl. btw)
+Aantal
+Totaal
+(excl. btw)
+Meubelolie & Vloerolie Naturel Mat 3000-30 -
+Volume : 1 liter, Kleuren : Naturel Mat
+21 %
+• 23,13
+1
+• 23,13
+Meubelolie & Vloerolie Weisgrund 3040 - Volume :
+1 liter, Kleuren : Weisgrund
+21 %
+• 23,13
+1
+• 23,13
+
+Btw-detail
+Btw-tarief
+Basisprijs
+Totaal btw
+Producten
+21.000 %
+• 46,26
+• 9,72
+Verzending
+21.000 %
+• 5,74
+• 1,21
+
+Totaal producten
+• 46,26
+Verzendkosten
+• 5,74
+Totaal (excl. btw)
+• 52,00
+Totaal btw
+• 10,93
+Totaal
+• 62,93
+
+Betaalmethode
+Sisow iDEAL
+• 62,93
+
+Vervoerder
+PostNL bezorgen / afhaalpunt
+
+
+
+
+Powered by TCPDF (www.tcpdf.org)
+  <SENDER_NAME> - Loberingemaat 6 - 7942 JD Meppel - Nederland

@@ -1,0 +1,31 @@
+{'/Title': IndirectObject(49, 0), '/Author': IndirectObject(51, 0), '/Subject': IndirectObject(52, 0), '/Producer': IndirectObject(50, 0), '/Creator': IndirectObject(53, 0), '/CreationDate': IndirectObject(54, 0), '/ModDate': IndirectObject(54, 0), '/Keywords': IndirectObject(55, 0), '/AAPL:Keywords': IndirectObject(56, 0)}
+
+            <SENDER_NAME>
+V.O.F
+                                        Specialist in tegelvlakke cementdekvloeren
+                 Fam de Rochebrune
+              Vaarsdrift 3
+         Juinen
+              Papendrecht
+02-06-2017     factuur 17068
+    -            Geachte heer,
+                      Aan u geleverd cementdekvloer
+45m27cmvezel bewapend
+Bedrag excl BTW
+900,00
+!
+ B.T.W 21%
+189,00
+!
+ Totaal door u te voldoen
+1.089,00
+!
+                                                                    Betalingen via IBAN.<IBAN>
+binnen 14 dagen
+ na datum factuur
+     Dennehof 23
+ 3355RJ Papendrecht
+ Mob.tel.0
+6-53190711 IBAN.43ABNA.042.97.26082
+ K.v.K <KVKNR>
+72 BTW .nr 8028.14.694.B01

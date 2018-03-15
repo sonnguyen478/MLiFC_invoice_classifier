@@ -1,0 +1,64 @@
+{'/Producer': 'PDFCreator 2.4.0.213', '/CreationDate': "D:20170321121729+01'00'", '/ModDate': "D:20170321121729+01'00'", '/Title': 'Factuur', '/Author': 'BoekhoudPC', '/Subject': '', '/Keywords': '', '/Creator': 'PDFCreator 2.4.0.213'}
+
+Rembrandtstraat 5-i, 3262HN, Oud-Beijerland.
+
+Telefoon   : 06-20398799
+
+Email       : info@<SENDER_NAME>.nl
+
+Bank ING : <IBAN>
+BTW nr              : NL1361.72.738.B01
+
+KVK Rotterdam   : <KVKNR>
+WEBSITE: http://www.<SENDER_NAME>.nl
+
+Factuurdatum:
+
+Factuurnummer:
+21-3-2017
+
+20170465
+Rochebrune, de
+
+Vaarsdrift 3
+
+1982 KB Juinen
+0071
+Debiteurnummer:
+Artikel
+AantalEenheidsprijsTotaalbedrag
+EUR
+EUR
+Artikelcode
+Schuifpui volgens email opdracht 19-12-2016.1,00 4.
+149,00 4.149,00
+Overige kozijnen gekoppeld volgens email
+
+opdracht 19-12-2016.
+1,00 6.441,00 6.441,00
+Rolluik met verbrede geleiders etc. volgens
+
+akkoord email 18-1-2017.
+1,00 1.284,00 1.284,00
+Arbeid 2,5 uur hulp bij het vernieuwen beslag
+
+bestaande schuifpui en het stellen van deze
+
+bestaande pui.
+1,00 127,12 127,13
+Bijkomend montage materiaal niet
+
+opgenomen: Compriband, afpurren
+
+gekoppelde pui. (overige beglazingkit en
+
+schroeven waren inbegrepen)
+1,00 29,00 29,00
+Credit al betaalde deelfactuur 20170449.1,00 -5.800
+,00 -5.800,00
+Totaal te betalen
++ 6.230,13
+•Het totaal bedrag binnen 8 dagen overmaken op IBAN:
+ <IBAN>
+            onder vermelding van factuurnummer en d
+ebiteurnummer

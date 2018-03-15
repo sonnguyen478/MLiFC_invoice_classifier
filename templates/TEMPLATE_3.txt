@@ -1,0 +1,85 @@
+{'/Title': ' ', '/Author': ' ', '/Creator': 'ezpdf 2.4.0', '/CreationDate': "D:20170524165015+02'00'", '/Producer': 'PDFlib 7.0.3p2 (C++/iSeries)'}
+Contract
+Factuur
+Debiteurnummer
+Datum
+Voertuig
+Kenteken
+Type
+Reden verhuring
+Bestuurder
+Huurtijdvak
+Omschrijving
+Aantal
+Tarief
+BtwBedrag
+<SENDER_NAME>
+Dordrecht
+Laan der Verenigde Naties 75
+3316 AK DORDRECHT
+TEL:  078-6338319
+FAX:  078-6131191
+KvK nr. : <KVKNR>
+Dordrecht
+ABN-AMRO: 24.03.81.114
+BTW-nr.: NL001918564B01
+BIC: ABNANL2AI
+BAN: <IBAN>
+De heer R. de Rochebrune
+Vaarsdrift 33274 BA
+Juinen
+FACTUUR
+B31881543541-010709573
+24-05-2017
+VT-132-H
+VW CADDY 2.0/55
+VERHUUR
+Fiscale waarde
+24.276,00
+Bijtellings-%
+25,00
+Dhr. R. de Rochebrune
+Vaarsdrift 3
+3274 BA Juinen
+Gereserveerd vanaf
+Gereserveerd t.e.m.
+Vertrokken op
+Retour op
+Berekend t.e.m.
+19-05-2017
+18.00
+22-05-2017
+08.00
+19-05-2017
+16.25
+22-05-2017
+07.45
+21-05-2017
+18.00
+Km-stand retour
+34.891
+Kilometers
+Km-stand vertrek
+34.781Verreden km's
+110
+Vrije km's
+300
+Huurtarief
+Normaal
+Weekend (ZA+ZO)
+H
+59,50
+
+Heeft u vragen over uw factuur, dan kunt u contact opnemenmet onze administratie via debiteuren@<SENDER_NAME>.nl
+of 078-6338330.___________
+59,50
+Btw   21,00 % over
+59,50
+12,50___________
+72,00-/-
+Waarborgsom
+540,00
+Factuur
+totaal in EUR
+468,00-
+Behandeld door Y.Wojtaszek

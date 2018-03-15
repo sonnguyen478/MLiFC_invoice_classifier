@@ -1,0 +1,38 @@
+{'/Producer': 'FPDF 1.7', '/CreationDate': 'D:20160627102859'}
+
+Factuur
+Factuurnr: PS8406
+Datum: 30-04-2016
+Naam: R. DE Rochebrune
+Adres: Vaarsdrift 3   1982 KB Juinen
+Opmerkingen: graag bezorgen aan achterzijde: straatnaam Haven.
+Uw bestelling van 30-04-2016 met ordernr. 116932
+_____________________________________________________________________________________________
+Artikel:
+Materiaal:
+Afwerking:
+Afmeting:
+Lengte:
+Aantal:
+Prijs:
+Totaalprijs:
+Gladde plint
+Mdf v313afgelakt9 x 452.44 m119 stuks•
+6.37•
+121.03
+High tackLijmkitn.v.t.n.v.t.per stuk2 stuks•
+7.99•
+15.98
+Gladde plint
+Mdf v313afgelakt12 x 1202.44 m113 stuks•
+11.49• 149.37High tackLijmkitn.v.t.n.v.t.per stuk4 stuks•
+0.00• 0.00Gratis levering:• 0.00
+
+Totaalbedrag incl.21% BTW: • 286.38
+BTW bedrag (21%):• 49.70
+
+Het totaalbedrag is reeds voldaan.
+Postadres: Akkerweg 23 - 6603 KD te Alverna | T: 06 426 288 13 | E: info@<SENDER_NAME>
+Rekeningnr. <IBAN> tnv. <SENDER_NAME> | BTW nr. NL.8539 963 25.B01 | KvK nr. <KVKNR>
+Pagina 1                       © Plintenstunter 2011 - 2016 | De algemene voorwaarden vindt u op
+www.<SENDER_NAME>/algemene-voorwaarden.html-

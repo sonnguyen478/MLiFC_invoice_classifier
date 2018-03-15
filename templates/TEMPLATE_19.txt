@@ -1,0 +1,198 @@
+{'/Producer': 'GEngine PDF Component v1.0 (c) gotomaxx GmbH', '/CreationDate': "D:20170727171923+01'00'"}
+
+<SENDER_NAME>
+Askay 28
+57439 Attendorn
+GF:  <SENDER_NAME>
+Amtsgericht Siegen, <KVKNR>
+Ust-ID-Nr.: DE 281971224
+Steuer-Nr.: 338/5850/6367
+Telefon:
+02722 / 657270
+Telefax:
+02722 / 6572710
+Internet:
+www.<SENDER_NAME>.de
+E-Mail:
+info@<SENDER_NAME>.de
+Commerzbank AG
+Kto.:   0854070000
+(BLZ 46040033)
+IBAN: <IBAN>0000
+BIC:   COBADEFFXXX
+<SENDER_NAME> * Askay 28 * 57439 Attendorn
+Rik de Rochebrune
+Vaarsdrift 3
+1982 KB Juinen
+NIEDERLANDE
+Rechnung
+Nr.:
+84613002
+Shopauftrag
+  609266
+Kunden Nr.:
+  374461
+Datum:
+27.07.2017
+Lieferdatum:
+27.07.2017
+Seite:
+   1
+Wir bedanken uns für Ihren Auftrag und erlauben uns folgende Positionen in Rechnung zu stellen:
+Hersteller
+Artikelnummer
+Warenbezeichnung
+Menge
+Preis
+Rabatt
+Gesamt
+Paypal Transaktionsnummer: 90G93612L6598362V
+Übernahme von Lieferschein Nr. 83399861 / 18.07.2017
+Übernahme von Auftrag Nr. 82615767 / 13.07.2017
+Festpreisartikel; daher nicht bonusfähig
+Gira
+03.021104
+Gira 021104 System 55 Rahmen Standard 55 Reinweiß seidenmatt
+   10,00
+     1,19
+       11,90
+Gira
+03.045427
+Gira 045427 System 55 Schuko-Steckdose mit Klappdeckel Reinw
+    1,00
+     7,83
+        7,83
+Festpreisartikel; daher nicht bonusfähig
+Gira
+03.021204
+Gira 021204 System 55 Rahmen Standard 55 Reinweiß seidenmatt
+   12,00
+     1,99
+       23,88
+Festpreisartikel; daher nicht bonusfähig
+GIRA
+03.569203
+Gira 569203 Einsatz Lautsprecheranschluss 1-fach Reinweiß gl
+    2,00
+    10,90
+       21,80
+Festpreisartikel; daher nicht bonusfähig
+Gira
+03.018827
+Gira 018827 System 55 Schuko-Steckdose Reinweiß seidenmatt
+   26,00
+     2,69
+       69,94
+Festpreisartikel; daher nicht bonusfähig
+Gira
+03.010600
+Gira 010600 Einsatz Wippschalter Universal-Aus-Wechselschalt
+    7,00
+     3,86
+       27,02
+GIRA
+03.264803
+Gira 264803 System 55 Montagerahmen Reinweiß glänzend
+    2,00
+     1,58
+        3,16
+Festpreisartikel; daher nicht bonusfähig
+Gira
+03.029627
+Gira 029627 System 55 Wippe Reinweiß seidenmatt
+    8,00
+     1,64
+       13,12
+Gira
+03.029527
+Gira 029527 System 55 Serienwippe Reinweiß seidenmatt
+    1,00
+     3,90
+        3,90
+Übertrag
+EUR
+      182,55
+<SENDER_NAME>
+Askay 28
+57439 Attendorn
+GF:  <SENDER_NAME>
+Amtsgericht Siegen, <KVKNR>
+Ust-ID-Nr.: DE 281971224
+Steuer-Nr.: 338/5850/6367
+Telefon:
+02722 / 657270
+Telefax:
+02722 / 6572710
+Internet:
+www.<SENDER_NAME>.de
+E-Mail:
+info@<SENDER_NAME>.de
+Commerzbank AG
+Kto.:   0854070000
+(BLZ 46040033)
+IBAN: <IBAN>0000
+BIC:   COBADEFFXXX
+Seite :    2
+Hersteller
+Artikelnummer
+Warenbezeichnung
+Menge
+Preis
+Rabatt
+Gesamt
+Vortrag
+      182,55
+Festpreisartikel; daher nicht bonusfähig
+Gira
+03.021304
+Gira 021304 System 55 Rahmen Standard 55 Reinweiß seidenmatt
+    3,00
+     3,49
+       10,47
+Festpreisartikel; daher nicht bonusfähig
+Gira
+03.245100
+Gira 245100 Einsatz Netzwerk-Anschlussdose Cat.6A 1-fach Sch
+    2,00
+    11,90
+       23,80
+Gira
+03.027027
+Gira 027027 System 55 Abdeckung für UAE IAE (ISDN)-und Netzw
+    4,00
+     2,36
+        9,44
+Übernahme von Lieferschein Nr. 83405983 / 27.07.2017
+Übernahme von Auftrag Nr. 82615767 / 13.07.2017
+Gira
+03.025227
+Gira 025227 Dichtungsset IP44 für Steckdosen mit Klappdeckel
+    1,00
+     2,24
+        2,24
+Besuchen Sie uns bei Facebook.
+Über e
+in Lik
+e würden wi
+r uns freuen.
+https://www.facebook.com/ElektrohandelWandeltGmbh/
+Warenwert
+      192,02
+Versand
+        9,90
+Paketdienst
+Zahlartenaufschlag
+        0,00
+Netto
+      200,34
+Steuer
+19,00%
+       38,06
+      200,34
+Gesamtbetrag
+EUR
+      238,40
+Zahlungsbedingungen
+Zahlbar per PayPal
+Fällig am 27.07.2017; Netto / 238,40 EUR
+Es gelten unsere Allgemeinen Geschäftsbedingungen. Unter http://www.<SENDER_NAME>.de/agb können Sie diese als PDF-Download herunterladen und ausdrucken.

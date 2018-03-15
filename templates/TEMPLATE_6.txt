@@ -1,0 +1,49 @@
+{'/Creator': 'ReportBuilder', '/CreationDate': 'D:20160228190328', '/Title': '<SENDER_NAME>', '/Author': 'Vanessa Reports', '/Producer': 'ReportBuilder', '/Keywords': '', '/Subject': ''}
+Oostplein 97
+3011 KW  Rotterdam
+(+31) (0)10 2683753
+(+31) (0)10 2125351
+klantenservice@thermostaatstore.nl
+Tel:
+Fax:
+Factuur
+Factuurnummer:
+Factuurdatum:
+Ordernummer:
+827415100
+28 februari
+201616089488
+Artikel
+Aantal
+Prijs per stuk
+Prijs incl. BTW
+BTW
+Klantnummer:6102888
+Nederland
+Demo
+H de Rochebrune
+Vaarsdrift 3
+3274 BA  Juinen
+<SENDER_NAME> B.V.
+Mail:Nest Protect V2 (Wired)
+1
+119,00
+119,00
+••
+21%+
+Totaal•
+119,00
+119,00
+'iDEAL' op 27 februari 2016•
++Subtotaal•
+119,00
+Exclusief BTW
+98,35•
+BTW21%
+20,65•
++Totaal•
+119,00
+KvK Rotterdam <KVKNR>
+BTW NL810433941B01
+IBAN <IBAN>
+Kijk voor alle informatie over ruilen, retouren, defecten en garantie op http://www.thermostaatstore.nl/klantenservice/

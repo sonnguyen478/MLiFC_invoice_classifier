@@ -1,0 +1,48 @@
+{'/Producer': 'dompdf <5c98652> + CPDF', '/CreationDate': "D:20170523175839+02'00'", '/ModDate': "D:20170523175839+02'00'", '/Title': '#100053635 | FACTUUR'}
+FACTUUR
+Factuurnummer: 23-05-2017-100053635
+Ordernummer: 100053635
+Datum: 23-05-2017
+Product
+Artikelnr.
+Aantal
+Prijs
+Totaal
+ABB HAF Flexomaat schroefloos B Kar. 16A
+11298403
+1 stuk
+• 10.69
+• 10.69
+Subtotaal
+• 10.69
+Verzendkosten
+• 5.37
+BTW 21%
+• 3.37
+Totaal
+• 19.43
+Betaalmethode:
+iDeal
+Uw betaling is voldaan op 23-05-2017.
+Factuuradres:
+R de Rochebrune
+Vaarsdrift 1
+1982 KB Juinen
+Nederland
+E-mailadres: hacking@xs4all.nl
+Telefoon: 06-20180315
+Afleveradres:
+R de Rochebrune
+Vaarsdrift 1
+1982 KB Juinen
+Nederland
+Beatrixstraat 15
+9285TV
+Buitenpost
+0511 - 70 02 06
+klantenservice@<SENDER_NAME>
+Bank: Rabobank
+IBAN: <IBAN>
+BIC: RABONL2U
+KvK: <KVKNR>
+BTW: NL851485455B01

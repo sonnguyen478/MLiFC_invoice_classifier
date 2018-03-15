@@ -1,0 +1,27 @@
+{'/Title': IndirectObject(45, 0), '/Author': IndirectObject(47, 0), '/Subject': IndirectObject(48, 0), '/Producer': IndirectObject(46, 0), '/Creator': IndirectObject(49, 0), '/CreationDate': IndirectObject(50, 0), '/ModDate': IndirectObject(50, 0), '/Keywords': IndirectObject(51, 0), '/AAPL:Keywords': IndirectObject(52, 0)}
+
+Factuur
+Factuuradres:Dhr. Rik de RochebruneVaarsdrift 3 of 11982 KB JuinenNetherlandsAan u geleverd:
+Factuur nummer:026587Factuurdatum:08.02.2016Order nummer:27168Klantnummer:11491Betalingswijze:iDEAL
+
+StuksArt. nr.ProductnaamPrijs perstukex. BTWPrijstotaalex. BTWBTWSubtotaal
+12TLS 4-25-27-30-h-dLED Lamp 12V, 2,5W, G4, Warmwit,horizontaal, dimbaar !
+5,00!
+60,00!
+12,60!
+72,60
+Verzendkosten !
+3,22!
+3,22!
+0,68!
+3,90
+Totaal ex. BTW:!
+63,22
+BTW (21%):!
+13,28
+Totaal:!
+63,22!
+13,28!
+76,50
+
+Powered by TCPDF (www.tcpdf.org)

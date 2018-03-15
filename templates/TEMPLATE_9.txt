@@ -1,0 +1,51 @@
+{'/Creator': 'Apache FOP Version 1.0', '/Producer': 'Apache FOP Version 1.0', '/CreationDate': "D:20170731163520+02'00'"}
+Pagina:
+1
+/
+1
+Factuur
+Dhr. r de Rochebrune
+Vaarsdrift 3 of 1
+1982 KB Juinen
+Factuurnummer
+200000633845
+Klantnummer
+01394955
+Ordernummer
+200019656135
+Besteldatum
+31/07/2017
+Datum betaalopdracht
+31/07/2017
+<SENDER_NAME>
+Formule GAMMA
+Storkstraat 2
+3833 LB Leusden
+Postbus 100
+3830 AC Leusden
+GAMMA.nl
+Kijk voor meer informatie over ruilen en retourneren op gamma.nl/klantenservice/ruilen-retourneren
+Op alle leveringen zijn de algemene voorwaarden Thuiswinkel van toepassing.
+KVK <KVKNR> -  BTW NL 00 5681 108 B01
+Maatwerkartikelen kunnen niet worden geruild.
+Artikelcode
+Omschrijving
+BTW
+Aantal
+Prijs
+Korting
+Subtotaal
+763278
+Attema inbouwdoos holle wand
+UHW50 5/8 inch
+21%
+25
+• 2,69
+• 0,00
+• 67,25
+Bezorgkosten
+• 0,00
+Totaal incl BTW
+• 67,25
+Waarvan 21% over • 55,58
+• 11,67

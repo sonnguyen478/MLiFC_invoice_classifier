@@ -1,0 +1,22 @@
+{'/Producer': 'FPDF 1.7', '/CreationDate': 'D:20150804214639'}
+
+<SENDER_NAME>
+Factuurnummer:11509049
+Factuurdatum:04-08-2015
+Debiteurnummer:78449
+DE Rochebrune R.
+Vaarsdrift 3
+1982 KB Juinen
+NEDERLAND
+aantal artnr omschrijving bruto korting netto totaal netto
+2 100251 SIKKENS RUBBOL XD SEMI-GLOSS KLEUR 1 LTR46,7839.0528,5157,02KLEURNR: 1013 (RAL)
+
+Totaalbedrag exclusief BTW
+BTW-bedrag
+Totaalbedrag inclusief BTW•
+57,02•
+11,98------------•
+69,00
+
+Deze factuur is middels Ideal betaald op 04-08-2015.
+| Energieweg 39-41, 2404 HE Alphen aan den Rijn || T 0172 42 33 23 || E info@<SENDER_NAME> || www.<SENDER_NAME> || IBAN: <IBAN> || BIC: INGBNL2A || KVK: <KVKNR> || BTWnr: NL8526.44.425.B01 |

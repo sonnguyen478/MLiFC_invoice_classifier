@@ -1,0 +1,58 @@
+{'/Author': IndirectObject(59, 0), '/Producer': IndirectObject(58, 0), '/Creator': IndirectObject(60, 0), '/CreationDate': IndirectObject(61, 0), '/ModDate': IndirectObject(61, 0)}
+<SENDER_NAME>
+DATUM:
+25 februari 2016
+FACTUURNR.
+2016130Roggeakker 16
+VOOR:
+3773 AB Barneveld
+Telefoon: 0342-492681
+FACTUURADRES:
+NaamRik de Rochebrune
+Mobiel    : 06-25004875
+Adres
+Vaarsdrift 3-of 1
+E-mail : info@dassie-radiatoren.nl
+Postcode en plaats
+1982 KB Juinen
+www.dassie-radiatoren.nl
+Telefoonnr.:
+06-20180315
+hacking@xs4all.nl
+Webshop: 1215
+Onderdeelnummer
+BEDRAG
+442751108,26
+
+ 5316003,72
+
+ 53234014,05
+
+ SUBTOTAAL
+126,03
+
+ BTW-TARIEF
+21,00%
+BTW-BEDRAG
+26,47
+
+ verzendkosten excl
+TOTAAL
+152,50
+
+ U krijgt 10 jaar fabrieksgarantie op deze radiator.
+BESCHRIJVING
+Henrad Softline M ECO4 90 cm hoog x   60 cm lang type 22 met 1332 Watt
+Open/dicht knop Heimeier wit 9540297
+H-blok recht Heimeier 3/4" 9541943
+Rabobank <IBAN>
+t.n.v. <SENDER_NAME>
+!"#$%&'(#&&%&')*'+,-%&'#&'./#-#&%$%'0%/1,22#&-'3%4'5,64""/7',$8'9%4
+1$,84#6
+$.8'#8'-%:%%84'2,&'+%'/,+#,4./'&#%4'3%%/'/%4."/'-%&.3%&':./+%&;
+<1%6#,,$'(%84%$+%'/,+#,4./%&'2"&&%&'&#%4'/%4."/'-%&.3%&':./+%&;
+Op al onze producten geldt een garantieperiode van 1 jaar tenzij
+anders vermeld.
+K.v.k.nr: <KVKNR>
+te Ede.
+BTW NR. NL1924.83.705.B01
