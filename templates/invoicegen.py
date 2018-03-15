@@ -3,6 +3,7 @@ from sklearn.utils import resample
 from datetime import datetime
 import random
 import string
+import uuid
 
 def create_invoice(content):
 
@@ -30,7 +31,7 @@ def create_invoice(content):
           'VATNR':'000038761017',
           'BANK':'RABOBANK',
           'BIC':'RABONL2U',
-          'IBAN':'NL97RABO0167773583',
+          'IBAN':'NL97 RABO 01677 735 83',
           'PHONE':'06-98486335',
           'EMAIL':'info@ofdataanalytics.com',
           'WEB':'http://ofdataanalytics.com/'}
@@ -90,7 +91,7 @@ def create_invoice(content):
           'VATNR':'000019267231',
           'BANK':'ING NETHERLANDS',
           'BIC':'INGBNL2A',
-          'IBAN':'NL02INGB0681309748',
+          'IBAN':'NL02 INGB 0681 3097 48',
           'PHONE':'06-88163931',
           'EMAIL':'info@unilever.com',
           'WEB':'https://www.unilever.com'}
@@ -98,7 +99,7 @@ def create_invoice(content):
 
     companies.append(co)
 
-    conditions = ['Payable within 30 days','Delivery after payment','']
+    conditions = ['Payable within 30 days','Delivery after payment','voldaan via iDeal','']
 
     bill_items = resample(items,n_samples=4,replace=False)
     prices = np.random.rand(4)*1000
@@ -164,7 +165,7 @@ def create_invoice(content):
 
     content = content.replace('<DUE_DATE>',due)
 
-    reference = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(5))
+    reference = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(7))
     invoice_no = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
 
     content = content.replace('<CUSTOMER_REFERENCE>',reference)
@@ -205,4 +206,9 @@ def create_invoice(content):
 
     target[total_start:total_end] = [5]*total_len
 
-    return content, target
+    
+    # added by Rik:
+    myid = str(uuid.uuid4())
+    truth = [myid, sender['NAME'], sender['KVKNR'], sender['IBAN'], reference, total ]
+    
+    return content, target, truth
