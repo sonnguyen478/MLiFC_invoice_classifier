@@ -19,7 +19,7 @@ Approach: Working from the baseline provided by Jannes, we improve some of the d
  * different example: two models predict the IBAN to be: NL12 AB#D 3456 7890 12 and NL12 #BCD 3456 7890 12 respectively. Both are mutated by noise, but the correct IBAN can be extracted by a model that learns to separate the signal from the noise. Call it error correction, if you like....
 
 ## Data formats
-Generated invoice examples look like the character based output from an OCR algorithm.
+Generated invoice examples look like the character based output from an OCR algorithm or PDF text extraction algorithm.
 ```
 f-torec%
 Aan:
