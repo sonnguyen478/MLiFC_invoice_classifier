@@ -6,6 +6,11 @@ import string
 import uuid
 
 def create_invoice(content):
+    """
+    generates array with invoice, target, ground truths in this order:
+    invoice (fulltext)
+    target (array)
+    """
 
     items = ['Water','Tea','Coffee',
          'Amazon Echo',' Instant Pot 7-in-1 Multi-Functional Pressure Cooker',
@@ -216,5 +221,5 @@ def create_invoice(content):
              str(reference), 
              str(total) 
             ]
-    
+#     print(2)
     return content, target, truth
