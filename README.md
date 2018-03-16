@@ -10,7 +10,7 @@ Aim: to provide a proof of concept (working prototype) that is capable of extrac
 Approach: Working from the baseline provided by Jannes, we improve some of the details. Also we attempt to enrich the generated example invoices. The heart of the project will be a stacker algo that can take up to four different (intermediate) results from one to four different extractor models.
 
 ## Random details
-* model "regex_iban" is a traditional algorithm based on regular expressions. 
+* model "RegExDragon" is a traditional algorithm based on regular expressions. It only extracts IBAN successfully.
 * model "X1" is an improved version of Jannes' baseline model.
 * all extractor models need to take input and produce outputs that are consistent in format and content.
   * This proves to be a challenge in itself. Jannes' notebook produces examples on the fly. We must find a way and a format to store the generated examples on disk and a way to share the uniquely identified invoices among team members. Each individual invoice must be accompanied by its "truth values" for training/testing.
@@ -159,7 +159,7 @@ where each number represents a character in the invoice and is interpreted to me
 5: Total
 ```
 # Stacker Algorithm
-But what we are really interested in are human readable strings like these:
+But what we really are interested in are human readable strings like these:
 ```
 Invoice UUID                         | Sender Name           | Sender KvK    | Sender IBAN             | ref.    | Total
 56584c6e-6cd7-49d4-8d7e-1830030fa225 | ING Bank N.V.         | 33031431      | NL12INGB0758162765      | MOU26   | 5921.60
@@ -186,3 +186,13 @@ Invoice Reference : 16 chars
 Total             : 16 chars
 ```
 All these are oversized to fit extraneous characters surrounding the string to extract. The idea is that the stacker algo sees some usable info in those. UUID is not a learnable input, so it is not oversized. It is up to the extractor models to "decide" wether to include extra chars or not.
+
+## TOC notebooks
+* Baseline Ortec: Jannes' original
+* Jannes_Baseline_Ortec: ditto, with improvements
+* RegExDragon: Enea's model, uses regular expressions to extract fields (IBAN only really)
+
+* invoices_generate_todisk: generates invoices/taregts/truths and saves them to disk
+* invoices_from_disk_sample_code: shows how to use the generated invoices in your extractor notebooks
+
+* IBAN_generation: generates IBANs and has multiplle ways to introduce noise into them, for training purposes
