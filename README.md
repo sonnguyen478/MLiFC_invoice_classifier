@@ -188,11 +188,20 @@ Total             : 16 chars
 All these are oversized to fit extraneous characters surrounding the string to extract. The idea is that the stacker algo sees some usable info in those. UUID is not a learnable input, so it is not oversized. It is up to the extractor models to "decide" wether to include extra chars or not.
 
 ## TOC notebooks
-* Baseline Ortec: Jannes' original
-* Jannes_Baseline_Ortec: ditto, with improvements
-* RegExDragon: Enea's model, uses regular expressions to extract fields (IBAN only really)
+* Baseline Ortec: Jannes' original (updated via Slack)
+* Ortec_jannes_1G: ditto, with improvements
+* Ortec_enea_regex_dragon_1G: Enea's model, uses regular expressions to extract fields (IBAN only really)
+* Ortec_shaffy_1G: Shaffy's model, like Jannes', experiments with hyper parameters
 
 * invoices_generate_todisk: generates invoices/taregts/truths and saves them to disk
 * invoices_from_disk_sample_code: shows how to use the generated invoices in your extractor notebooks
+* ortec.py: library used by invoices_from_disk_sample_code; loads batches of invoices
 
-* IBAN_generation: generates IBANs and has multiplle ways to introduce noise into them, for training purposes
+* IBAN_generation: generates IBANs and has multiple ways to introduce noise into strings, for training purposes
+* IBAN_stacker: model for IBANs only, stacks multiple outputs to create one good prediction
+
+## Model maturity
+1G: model generates invoices on the fly, using create_invoice()
+2G: same, but saves output to disk for future stackers to pick up. output must include ground truth in string format
+G2: similar, but confused; takes input from disk, but does not save to disk
+3G: best of all; reads and writes disk stored invoices, targets and ground truths
