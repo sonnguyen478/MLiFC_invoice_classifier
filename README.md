@@ -1,207 +1,61 @@
-# MLiFC_invoice_classifier
-Some focus in code for our study group_x in Bletchley Bootcamp...
+# README!
+this file contains all the documentation of our attempt at Ortec challenge for an invoice field extractor.
 
-Contains the baseline notebook by Jannes Klaas @ Bletchley Bootcamp / Turing Society Rotterdam.
-https://drive.google.com/file/d/1wjtiXpxRkuN5V57GiK_RSPxy84cFbERO/view?usp=sharing
+## INDEX
+1. Content of the repo
+2. What we have made
+3. Description of our processing pipeline
+4. Generation of data
+5. Expansion of the project
+6. Reflections
 
-## Aim of the project and approach
-Aim: to provide a proof of concept (working prototype) that is capable of extracting five specific strings from invoices.
+## 2. Description of our processing pipeline
 
-Approach: Working from the baseline provided by Jannes, we improve some of the details. Also we attempt to enrich the generated example invoices. The heart of the project will be a stacker algo that can take up to four different (intermediate) results from one to four different extractor models.
+We first defined a data generator that generates 47000 different invoices from 21 different templates. This data is then saved to a disk to be used by the different models. 
+Next we would like to create 4 models which read in the different invoices and return an output of 5 strings which represent each of the five categories i.e. sender name, sender KVK, sender IBAN, invoice reference and the total amount due. 
+The objective is for each model to use a different method to derive the 5 strings. After which we put these outputs in a NN which we call the Stacker. 
+We want the Stacker model to do 2 things, first of we want the model to choose the best output out of the 4 models and secondly we want the model to learn which errors each model makes and correct these errors.
+By combining our models, we intend to create a voting system. Each model would output zero or more predictions, where zero would be the case where the classifier does not find a string in the invoice which matches our categories. The predictions are compiled and used as inputs into a neural netEwork. This neural network would then be able to identify if a classifier makes systematic errors, producing an improved overall result by weighting each prediction appropriately.
 
-## Random details
-* model "RegExDragon" is a traditional algorithm based on regular expressions. It only extracts IBAN successfully.
-* model "X1" is an improved version of Jannes' baseline model.
-* all extractor models need to take input and produce outputs that are consistent in format and content.
-  * This proves to be a challenge in itself. Jannes' notebook produces examples on the fly. We must find a way and a format to store the generated examples on disk and a way to share the uniquely identified invoices among team members. Each individual invoice must be accompanied by its "truth values" for training/testing.
-* the stacker algo takes in 1 or more sets of strings (identified by the invoice's uuid) and spits out a corrected set of similar strings. It aims to select the strongest inputs or strongest parts of strings and recombine these into better strings.
- * for instance: two models predict the KvK number to be: 12345678 and I2345678 repectively. The first is correct and the stacker should learn to select that one as its output. In order to train the stacker, it needs the truth for the KvK number as a target.
- * different example: two models predict the IBAN to be: NL12 AB#D 3456 7890 12 and NL12 #BCD 3456 7890 12 respectively. Both are mutated by noise, but the correct IBAN can be extracted by a model that learns to separate the signal from the noise. Call it error correction, if you like....
+## 4. Data generation when "real" data is not available
+One of the challenges in this project was to improve on the training data.
 
-## Data formats
-Generated invoice examples look like the character based output from an OCR algorithm or PDF text extraction algorithm.
-```
-f-torec%
-Aan:
+The original Baseline produces invoices (and training targets) on the fly. We are proposing a pipeline where all data is on disk for different collaborators to load it from.
 
-ING Bank N.V.
-Bijlmerplein 888
-1102MG 1102MG
+We wrote a notebook that generates invoices with corresponding targets and truth strings. The notebook fills a subdir with csv files and creates a zipfile for distribution.
+The original generator was limited to two templates. We added 19 more templates based on real life examples. Personal details were altered and the parts of interest were changed into placeholders for the algorithm.
 
-ORTEC Finance B.V.
-Boompjes 40
-KvK nr:
+The main challenge in our pipeline is to make sure all collaborating parties work on the same collection of invoices and know how to identify each invoice. That is why we added a globally unique identifier to every invoice.
 
-3011XB Rotterdam
+For the benefit of the stacker model, we store the "truth strings" of the invoice with the invoice in the same file. To accomplish that, we had to change the generation algorithm to return those strings in an array.
 
-BTW nr:
+For a further explanation, read the invoices_generate_todisk.ipynb.
+The notebook invoices_from_disk_demo.ipynb gives a demonstration on how to use the saved data.
 
-Bank:
-BAN:
-BIC:
-Tel:
-E-mail:
-Website:
+## 5. Expansion of the project
 
-Factuur
+Two weeks were not enough to implement all the ideas we think are valuable in solving the problem at hand.
+In this section the goal is to outline the possibilities that didn't end up in our submission but which could make for a useful addition.
 
-33031431
-000019531656
-ING NETHERLANDS
-NL12INGB0758162765
-INGBNL2A
-06-90366060
-info@ing.nl
-https://www.ing.nl
+### 5.1 KvK API
+The KvK API provides data about companies. It can be called providing name and/or KvK nummer and returns a JSON with the information about the company.
+The API is paid for commercial use.
 
-Factuurnummer
+since the KvK number has a fixed structure and we are convinced a model could become quite good at recognizing it, it could become the unique Key. In the end, difficult-to-predict fields such as company name or address could be obtained via KvK database instead of a neural network.
+Since the KvK number itself is an uncertain result in out approach, exceptions should be raised if no result is obtained via this method.
 
-Factuurdatum
+### 5.2 Caching of past results
+A company has a stable set of suppliers from which it receives invoices. Once a field such as company name has been predicted correctly once it gets inserted in a database, with all other known attrivutes of the supplier. When the model outputs a set of results it can try to match them to the database of known companies (no need for exact match, something like fuzzy search) and retrieve results from there.
+In this way the probabilistic and error-prone results of our models lead to certain results stored in the database. 
 
-Uw referentie
+With time the database would become more and more complete, leading to more matches and less guesses
 
-XEIQQ9ATAL
+### 5.3 IBAN check via schwifty
+IBAN codes can be validated via an algorythm as shown [here](https://en.wikipedia.org/wiki/International_Bank_Account_Number#Algorithms).
+there is a nice python library that does automatic checks on IBANs. Documentation can be found [here](https://pypi.python.org/pypi/schwifty/1.0.0).
 
-9/11/2015
+The idea is to write a function that checks IBANs and insert it in the pipeline. If an IBAN passes the test it can be flagged as a high-probability prediction. With time the check could become a confirmation of a perfect match.
 
-MOU26
+## 6. Reflection
 
-DATUM
-
-AANTAL
-
-PRIJS
-
-BTW
-
-SUBTOTAAL
-
-OMSCHRIJVING
-
-Sony XB950B1 Extra Bass Wireless Headphones
-
-4.00
-
-€ 5.75
-
-€ 2.76
-
-€ 23.01
-
-
-23andMe DNA Test
-
-4.00
-
-€ 557.85
-
-€ 267.77
-
-€ 2231.40
-
-
- Instant Pot 7-in-1 Multi-Functional Pressure Cooker
-
-9.00
-
-€ 328.17
-
-€ 354.42
-
-€ 2953.49
-
-
-Anker Super Bright Tactical Flashlight, Rechargeable
-
-9.00
-
-€ 8.80
-
-€ 9.51
-
-€ 79.24
-
-TOTAAL EXCL. BTW
-
-€ 5287.14
-BTW%
-
-OVER
-
-BEDRAG
-
--
-
--
-
-
-TOTAAL BTW
-
-€ 634.46
-TE BETALEN
-
-€ 5921.60
-
-Opmerkingen & Voorwaarden
-<CONDITIONS>
-```
-The accompanying truth is generated to be:
-```
-[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 5, 5, 5, 5, 5, 5, 5, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-```
-where each number represents a character in the invoice and is interpreted to mean:
-```
-0: Ignore
-1: Sender Name
-2: Sender KVK
-3: Sender IBAN
-4: Invoice Reference
-5: Total
-```
-# Stacker Algorithm
-But what we really are interested in are human readable strings like these:
-```
-Invoice UUID                         | Sender Name           | Sender KvK    | Sender IBAN             | ref.    | Total
-56584c6e-6cd7-49d4-8d7e-1830030fa225 | ING Bank N.V.         | 33031431      | NL12INGB0758162765      | MOU26   | 5921.60
-```
-Assume our extractor models create strings like above. Strings that are in need of some cleaning up, electing, correcting maybe.
-model X1 predicts:
-```
-56584c6e-6cd7-49d4-8d7e-1830030fa225 | n:ING Bank N.V.B      | r33031431000   | SNL12INGB0758162765I   |  <None>  | € 5921.60
-```
-while model X2 predicts for the same invoice:
-```
-56584c6e-6cd7-49d4-8d7e-1830030fa225 | n:ING Bank            | 3303 1431      | NL12 INGB 0758 1627 65 |  <None>  | X 5921,60
-```
-The stacker algorithm needs to learn to choose which parts of which inputs "to trust" and copy to its output. For some fields it might even learn how to correct the string so that it complies to the expected format (IBAN?). And the stacker also needs to learn to ignore the strings that the models could not predict at all.
-
-## uniformity of inputs and outputs and targets
-This is the proposed format for each extractable field:
-```
-Invoice UUID      : 36 chars (as generated by python module uuid, method .uuid4(): random string)
-Sender Name       : 32 chars
-Sender KVK        : 16 chars
-Sender IBAN       : 32 chars
-Invoice Reference : 16 chars
-Total             : 16 chars
-```
-All these are oversized to fit extraneous characters surrounding the string to extract. The idea is that the stacker algo sees some usable info in those. UUID is not a learnable input, so it is not oversized. It is up to the extractor models to "decide" wether to include extra chars or not.
-
-## TOC notebooks
-* Baseline Ortec: Jannes' original (updated via Slack)
-* Ortec_jannes_1G: ditto, with improvements
-* Ortec_enea_regex_dragon_1G: Enea's model, uses regular expressions to extract fields (IBAN only really)
-* Ortec_shaffy_1G: Shaffy's model, like Jannes', experiments with hyper parameters
-
-* invoices_generate_todisk: generates invoices/taregts/truths and saves them to disk
-* invoices_from_disk_sample_code: shows how to use the generated invoices in your extractor notebooks
-* ortec.py: library used by invoices_from_disk_sample_code; loads batches of invoices
-
-* IBAN_generation: generates IBANs and has multiple ways to introduce noise into strings, for training purposes
-* IBAN_stacker: model for IBANs only, stacks multiple outputs to create one good prediction
-
-## Model maturity
-1G: model generates invoices on the fly, using create_invoice()
-2G: same, but saves output to disk for future stackers to pick up. output must include ground truth in string format
-G2: similar, but confused; takes input from disk, but does not save to disk
-3G: best of all; reads and writes disk stored invoices, targets and ground truths
+As a group we ran into numerous challenges when trying to tackle the problem of accurately identifying invoices. An initial problem that we had was that we were running models based on alterations of those few templates, which meant that our model would highly overfit, and not necessarily be applicable to other files. In real life for example, IBAN numbers can be grouped by four, or they can be written as one long string of 22 characters. Our group attempted to work around this limitation, by adding 19 extra invoices that one group member could provide. Now our group was able to generate invoices, which are more than 1000% more diverse than the initial two templates, which is highly effective in combatting overfitting. Most problems that we faced were technical in nature. By creating thousands of new invoices, we saved them to a disk. Importing and training on this data, proved to be a technical challenge, which cost time. We expect that the combined stacking model could be effective, had there been a bit more time to work out the technical kinks of building such a model. Dividing up work and working remotely is also not highly effective, and we imagine that an internal team at a company such as Ortec would have less of these communication problems, meaning all ideas are aligned quicker.
