@@ -9,9 +9,13 @@ def create_invoice(content):
     """
     generates array with invoice, target, ground truths in this order:
     invoice (fulltext)
-    target (array)
+    target (array of character classifications)
+    truth (array of strings, including a uniquely generated identifier)
+    
+    altered by Rik
     """
 
+    
     items = ['Water','Tea','Coffee',
          'Amazon Echo',' Instant Pot 7-in-1 Multi-Functional Pressure Cooker',
          'TechMatte MagGrip Air Vent Magnetic Universal Car Mount','SanDisk 32GB Ultra Class Memory Card',
@@ -25,7 +29,7 @@ def create_invoice(content):
          'BIC Marking Permanent Marker, Metallic','2-in-1 Pet Glove: Grooming Tool + Furniture Pet Hair Remover',
          'Criacr Bluetooth FM Transmitter, Wireless In-Car FM Transmitter','Get Out [Blu-ray]',
          'Car Charger for Nintendo Switch','JETech 2-Pack iPhone 8/7 Screen Protector']
-
+         
     companies = []
 
     co = {'NAME':'Ortec Finance Big Data Analytics B.V.',
@@ -33,10 +37,10 @@ def create_invoice(content):
           'POST':'3011XB',
           'CITY':'Rotterdam',
           'KVKNR':'70498032',
-          'VATNR':'000038761017',
-          'BANK':'RABOBANK',
+          'VATNR':'000038761017', 
+          'BANK':'RABOBANK', 
           'BIC':'RABONL2U',
-          'IBAN':'NL97 RABO 01677 735 83',
+          'IBAN':'NL97RABO0167773583', 
           'PHONE':'06-98486335',
           'EMAIL':'info@ofdataanalytics.com',
           'WEB':'http://ofdataanalytics.com/'}
@@ -49,7 +53,7 @@ def create_invoice(content):
           'CITY':'Rotterdam',
           'KVKNR':'24421148',
           'VATNR':'000019986750',
-          'BANK':'RABOBANK',
+          'BANK':'RABOBANK', 
           'BIC':'RABONL2U',
           'IBAN':'NL35RABO0386025669',
           'PHONE':'06-90366060',
@@ -64,7 +68,7 @@ def create_invoice(content):
           'CITY':'Amsterdam',
           'KVKNR':'33031431',
           'VATNR':'000019531656',
-          'BANK':'ING NETHERLANDS',
+          'BANK':'ING NETHERLANDS', 
           'BIC':'INGBNL2A',
           'IBAN':'NL12INGB0758162765',
           'PHONE':'06-90366060',
@@ -79,7 +83,7 @@ def create_invoice(content):
           'CITY':'s-Gravenhage',
           'KVKNR':'69988978',
           'VATNR':'000038299550',
-          'BANK':'RABOBANK',
+          'BANK':'RABOBANK', 
           'BIC':'RABONL2U',
           'IBAN':'NL41RABO0150437878',
           'PHONE':'06-35829070',
@@ -94,18 +98,18 @@ def create_invoice(content):
           'CITY':'Rotterdam',
           'KVKNR':'24269393',
           'VATNR':'000019267231',
-          'BANK':'ING NETHERLANDS',
+          'BANK':'ING NETHERLANDS', 
           'BIC':'INGBNL2A',
-          'IBAN':'NL02 INGB 0681 3097 48',
+          'IBAN':'NL02INGB0681309748',
           'PHONE':'06-88163931',
           'EMAIL':'info@unilever.com',
           'WEB':'https://www.unilever.com'}
 
 
     companies.append(co)
-
-    conditions = ['Payable within 30 days','Delivery after payment','voldaan via iDeal','']
-
+    
+    conditions = ['Payable within 30 days','Delivery after payment','Voldaan via iDeal', '']
+    
     bill_items = resample(items,n_samples=4,replace=False)
     prices = np.random.rand(4)*1000
     quants = np.random.randint(1,10,size=4)
@@ -114,7 +118,7 @@ def create_invoice(content):
     total_vat = np.sum(vat_s)
     total_wo_vat = np.sum(totals)
     total = total_vat + total_wo_vat
-
+        
     for i in range(4):
         item_name = bill_items[i]
         item_quant = quants[i]
@@ -135,7 +139,7 @@ def create_invoice(content):
     content = content.replace('<TOTAL_VAT>',"{0:.2f}".format(total_vat))
     content = content.replace('<TOTAL>',"{0:.2f}".format(total))
     sender, reciever = resample(companies, n_samples=2,replace=False)
-
+    
     content = content.replace('<SENDER_NAME>',sender['NAME'])
     content = content.replace('<SENDER_STREET>',sender['STREET'])
     content = content.replace('<SENDER_POST>',sender['POST'])
@@ -152,7 +156,7 @@ def create_invoice(content):
     content = content.replace('<RECIPIENT_STREET>',reciever['STREET'])
     content = content.replace('<RECIPIENT_POST>',reciever['POST'])
     content = content.replace('<RECIPIENT_CITY>',reciever['CITY'])
-
+    
     year = random.randint(2008, 2017)
     month = random.randint(1, 12)
     day = random.randint(1, 28)
@@ -161,7 +165,7 @@ def create_invoice(content):
 
     content = content.replace('<INVOICE_DATE>',date)
 
-    if month < 12:
+    if month < 12: 
         month += 1
     else:
         month = 1
@@ -169,57 +173,65 @@ def create_invoice(content):
     due = '{}/{}/{}'.format(day,month,year)
 
     content = content.replace('<DUE_DATE>',due)
-
+    
+    # Rik incereased length of reference from 5 to 7
     reference = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(7))
     invoice_no = ''.join(random.choice(string.ascii_uppercase + string.digits) for _ in range(10))
 
     content = content.replace('<CUSTOMER_REFERENCE>',reference)
     content = content.replace('<INVOICE_NR>',invoice_no)
-
+    
     condition = resample(conditions, n_samples = 1)[0]
     content = content.replace('<CONDITION>',condition)
-
+        
     target = [0]* len(content)
-
+    
     sn_start = content.find(sender['NAME'])
     sn_len = len(sender['NAME'])
     sn_end = sn_start + sn_len
 
-    target[sn_start:sn_end] = [1]*sn_len
-
+    if sn_start != -1:
+        target[sn_start:sn_end] = [1]*sn_len
+    
     skvk_start = content.find(sender['KVKNR'])
     skvk_len = len(sender['KVKNR'])
     skvk_end = skvk_start + skvk_len
 
-    target[skvk_start:skvk_end] = [2]*skvk_len
-
+    if skvk_start != -1:
+        target[skvk_start:skvk_end] = [2]*skvk_len
+    
     siban_start = content.find(sender['IBAN'])
     siban_len = len(sender['IBAN'])
     siban_end = siban_start + siban_len
 
-    target[siban_start:siban_end] = [3]*siban_len
-
+    if siban_start != -1:
+        target[siban_start:siban_end] = [3]*siban_len
+    
     ref_start = content.find(reference)
     ref_len = len(reference)
     ref_end = ref_start + ref_len
-
-    target[ref_start:ref_end] = [4]*ref_len
-
+    
+    if ref_start != -1:
+        target[ref_start:ref_end] = [4]*ref_len
+    
     total_start = content.find("{0:.2f}".format(total))
     total_len = len("{0:.2f}".format(total))
     total_end = total_start + total_len
-
-    target[total_start:total_end] = [5]*total_len
-
+    
+    if total_start != -1:
+        target[total_start:total_end] = [5]*total_len
     
     # added by Rik:
     myid = uuid.uuid4()
     truth = [str(myid), 
-             str(sender['NAME']),
-             str(sender['KVKNR']), 
-             str(sender['IBAN']), 
-             str(reference), 
-             str(total) 
+            str(sender['NAME']),
+            str(sender['KVKNR']), 
+            str(sender['IBAN']), 
+            str(reference), 
+            str(total) 
             ]
-#     print(2)
+    #
+
+    assert (len(content) == len(target))
+
     return content, target, truth

@@ -120,6 +120,6 @@ TE BETALEN
 € <TOTAL>
 
 Opmerkingen & Voorwaarden
-<CONDITION>
+<CONDITIONS>
 
 
