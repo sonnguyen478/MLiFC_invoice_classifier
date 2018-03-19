@@ -11,3 +11,4 @@ The main challenge in our pipeline is to make sure all collaborating parties wor
 For the benefit of the stacker model, we store the "truth strings" of the invoice with the invoice in the same file. To accomplish that, we had to change the generation algorithm to return those strings in an array.
 
 For a further explanation, read the invoices_generate_todisk.ipynb.
+The notebook invoices_from_disk_demo.ipynb gives a demonstration on how to use the saved data.
