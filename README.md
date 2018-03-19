@@ -30,10 +30,13 @@ G2: similar, but confused; takes input from disk, but does not save to disk
 3G: best of all; reads and writes disk stored invoices, targets and ground truths
 
 ## 2. What we have done
-### Aim of the project and approach
-Aim: to provide a proof of concept (working prototype) that is capable of extracting five specific strings from invoices.
+### Aim
+The aim of the project is to sort text from text-format invoices and correctly output the text related to each category.
 
-Approach: Working from the baseline provided by Jannes, we build around it. Also we attempt to enrich the generated example invoices. The heart of the project will be a stacker algo that can take up to four different (intermediate) results from one to four different extractor models.
+### Approach
+* Generate our own larger pool of invoices from 21 different invoice templates.
+* Use the pool of generated invoices to build models that make predictions for each category and outputs the related text.
+* Input the outputs of the models to a stacker, that assigns weights to the predictions and to produce the best possible prediction.
 
 ### Random details
 * model "RegExDragon" is a traditional algorithm based on regular expressions. It only extracts IBAN successfully.
