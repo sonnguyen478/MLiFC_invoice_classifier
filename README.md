@@ -1,4 +1,4 @@
-# README!
+# Invoice classifier - group_x
 this file contains all the documentation of our attempt at Ortec challenge for an invoice field extractor.
 
 ## INDEX
