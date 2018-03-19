@@ -9,13 +9,53 @@ this file contains all the documentation of our attempt at Ortec challenge for a
 5. Expansion of the project
 6. Reflections
 
-## 2. Description of our processing pipeline
+## 1. Content of the repo
+### TOC notebooks
+* Baseline Ortec: Jannes' original (updated via Slack)
+* Ortec_jannes_1G: ditto, with improvements
+* Ortec_enea_regex_dragon_1G: Enea's model, uses regular expressions to extract fields (IBAN only really)
+* Ortec_shaffy_1G: Shaffy's model, like Jannes', experiments with hyper parameters
+
+* invoices_generate_todisk: generates invoices/taregts/truths and saves them to disk
+* invoices_from_disk_sample_code: shows how to use the generated invoices in your extractor notebooks
+* ortec.py: library used by invoices_from_disk_sample_code; loads batches of invoices
+
+* IBAN_generation: generates IBANs and has multiple ways to introduce noise into strings, for training purposes
+* IBAN_stacker: model for IBANs only, stacks multiple outputs to create one good prediction
+
+### Model maturity
+1G: model generates invoices on the fly, using create_invoice()
+2G: same, but saves output to disk for future stackers to pick up. output must include ground truth in string format
+G2: similar, but confused; takes input from disk, but does not save to disk
+3G: best of all; reads and writes disk stored invoices, targets and ground truths
+
+## 2. What we have done
+### Aim of the project and approach
+Aim: to provide a proof of concept (working prototype) that is capable of extracting five specific strings from invoices.
+
+Approach: Working from the baseline provided by Jannes, we build around it. Also we attempt to enrich the generated example invoices. The heart of the project will be a stacker algo that can take up to four different (intermediate) results from one to four different extractor models.
+
+### Random details
+* model "RegExDragon" is a traditional algorithm based on regular expressions. It only extracts IBAN successfully.
+* all extractor models need to take input and produce outputs that are consistent in format and content.
+  * This proves to be a challenge in itself. Jannes' notebook produces examples on the fly. We must find a way and a format to store the generated examples on disk and a way to share the uniquely identified invoices among team members. Each individual invoice must be accompanied by its "truth values" for training/testing.
+* the stacker algo takes in 1 or more sets of strings (identified by the invoice's uuid) and spits out a corrected set of similar strings. It aims to select the strongest inputs or strongest parts of strings and recombine these into better strings.
+ * for instance: two models predict the KvK number to be: 12345678 and I2345678 repectively. The first is correct and the stacker should learn to select that one as its output. In order to train the stacker, it needs the truth for the KvK number as a target.
+ * different example: two models predict the IBAN to be: NL12 AB#D 3456 7890 12 and NL12 #BCD 3456 7890 12 respectively. Both are mutated by noise, but the correct IBAN can be extracted by a model that learns to separate the signal from the noise. Call it error correction, if you like....
+ 
+## 3. What we would like to happen..
 
 We first defined a data generator that generates 47000 different invoices from 21 different templates. This data is then saved to a disk to be used by the different models. 
 Next we would like to create 4 models which read in the different invoices and return an output of 5 strings which represent each of the five categories i.e. sender name, sender KVK, sender IBAN, invoice reference and the total amount due. 
-The objective is for each model to use a different method to derive the 5 strings. After which we put these outputs in a NN which we call the Stacker. 
+The objective is for each model to use a different method to derive the 5 strings. 
+At this time the models are:
+* baseline provided in the course
+* our own improvement on the baseline
+* a string extractor via regexes.
+After which we put these outputs in a NN which we call the Stacker. 
+
 We want the Stacker model to do 2 things, first of we want the model to choose the best output out of the 4 models and secondly we want the model to learn which errors each model makes and correct these errors.
-By combining our models, we intend to create a voting system. Each model would output zero or more predictions, where zero would be the case where the classifier does not find a string in the invoice which matches our categories. The predictions are compiled and used as inputs into a neural netEwork. This neural network would then be able to identify if a classifier makes systematic errors, producing an improved overall result by weighting each prediction appropriately.
+By combining our models, we intend to create a voting system. Each model would output zero or more predictions, where zero would be the case where the classifier does not find a string in the invoice which matches our categories. The predictions are compiled and used as inputs into a neural netEwork. This neural network would then be able to identify if a classifier makes systematic errors, producing an improved overall result by weighting each prediction appropriately. A sci-fi model we still have not figured out how to build would be able to take different "imperfect" predictions, separate signsal from noise and produce the correct prediction.
 
 ## 4. Data generation when "real" data is not available
 One of the challenges in this project was to improve on the training data.
