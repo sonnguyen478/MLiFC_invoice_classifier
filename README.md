@@ -38,6 +38,9 @@ The aim of the project is to sort text from text-format invoices and correctly o
 * Use the pool of generated invoices to build models that make predictions for each category and outputs the related text.
 * Input the outputs of the models to a stacker, that assigns weights to the predictions and to produce the best possible prediction.
 
+![proposed pipeline for extraction of info from invoices](https://github.com/riklmr/MLiFC_invoice_classifier/blob/master/ortec_invoice_pipeline_group_X.png "proposed pipeline for extraction of info from invoices")
+
+
 ### Random details
 * model "RegExDragon" is a traditional algorithm based on regular expressions. It only extracts IBAN successfully.
 * all extractor models need to take input and produce outputs that are consistent in format and content.
